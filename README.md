@@ -13,3 +13,8 @@ Digital Media graduate specializing in web design with proven coding, designing,
 1. Item 1 [Google](www.google.com)
 1. Item 2
 1. Item 3
+(jennygardner.com)[fake resume website]
+
+## Conflicts
+
+This section represents code on the server that isnt on the locl repository
