@@ -8,3 +8,7 @@ The *ice* folder contains in-class exercises.
 Digital Media graduate specializing in web design with proven coding, designing, and project management skills. Seeking a position as a user-experience designer at Lockheed Martin to leverage organizational and research skills to further excellent human-computer interactions.
 
 (jennygardner.com)[fake resume website]
+
+## Conflicts
+
+This section represents code on the server that isnt on the locl repository
