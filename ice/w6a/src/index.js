@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
+//issues
 //https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment
 //lifting state up
 //npm start -- starts server
