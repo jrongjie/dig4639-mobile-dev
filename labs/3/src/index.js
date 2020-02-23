@@ -22,7 +22,7 @@ function runOnLoad(){
         content:"Sample value provided"
     });    
     
-    element.appendChild(newTask.render());
+    //element.appendChild(newTask.render());
 }
     
     window.addEventListener ("DOMContentLoaded", runOnLoad);
