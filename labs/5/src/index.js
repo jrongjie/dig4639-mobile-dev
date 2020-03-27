@@ -8,6 +8,7 @@ import App from './App';
 ReactDOM.render(<App />, document.getElementById('root'));
 
 /*
+
 function runOnLoad(){    
     // Create a container for us    
     let element = document.createElement("div");    
