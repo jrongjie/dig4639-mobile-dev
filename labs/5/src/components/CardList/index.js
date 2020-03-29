@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Card/";
+import Weather from "../Weather";
 import data from "../../data.json";
 
 class CardList extends React.Component {
@@ -22,7 +22,7 @@ class CardList extends React.Component {
     return(
       <div>
           {this.state.cards.map((card, index) => {
-            return <Card 
+            return <Weather 
                 key={index}
                 title={card.title} 
                 content={card.content}/>

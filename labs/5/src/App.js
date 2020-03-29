@@ -1,13 +1,20 @@
 import React from 'react';
-//import './App.css';
+import {View} from "react-native";
 import CardList from "./components/CardList";
 
+const styles = StyleSheet.create({
+  text1: {
+    backgroundColor: "magenta",
+    color: "cyan"
+  }
+})
+
 class App extends React.Component {
-  render(){
+  render() {
     return (
-      <div className="App">
-        <CardList/>
-      </div> 
+      <View>
+        <CardList />
+      </View>
     );
   }
 }
