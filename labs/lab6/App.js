@@ -40,7 +40,7 @@ class LandingPage extends React.Component{
 
     this.state = {
       score: 0,
-      title: "Do You Know Your Food?",
+      title: "Do You Know Your Film Production Management?",
       currentState: TITLE_STATE,
       currentQuestion: 0,
       questionIndices: [0,1,2,3,4,5,6]
