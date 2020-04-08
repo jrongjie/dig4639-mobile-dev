@@ -1,0 +1,161 @@
+[
+    
+    {
+        "question": "In what year was the blue M&M introduced?",
+        "answerOptions":[
+            {
+                "text":"1998",
+                "correct": false
+            },
+            {
+                "text":"1997",
+                "correct": false
+            },
+            {
+                "text":"1996",
+                "correct": false
+            },
+            {
+                "text":"1995",
+                "correct": true
+            }
+        ]
+
+    },
+  
+    {
+        "question":"Which country exports the most food?",
+        "answerOptions":[
+            {
+                "text": "China",
+                "correct": false
+            },
+
+            {
+                "text": "United States",
+                "correct": true
+            },
+            {
+                "text":"India",
+                "correct": false
+
+            },
+            {
+                "text": "Italy",
+                "correct": false
+
+            }
+        ]
+    },
+
+
+    {
+        "question": "Who are the first people known to have consumed chocolate?",
+        "answerOptions":[
+            {
+                "text": "Olmecs",
+                "correct": true
+            },
+            {
+                "text": "Aztecs",
+                "correct": false
+            },
+            {
+                "text":"Mayans",
+                "correct": false
+            },
+            {
+                "text":"Toltec",
+                "correct": false
+            }
+        ]
+        
+    },
+
+    {
+        "question":"A \"hot dog\" is a colloquial term for what food?",
+        "answerOptions":[
+            {
+                "text": "Currywurst",
+                "correct": false
+            },
+            {
+                "text": "Bratwurst",
+                "correct": false
+            },
+            {
+                "text": "Frankfurter" ,
+                "correct": true
+            },
+            {
+                "text": "Weisswurst" ,
+                "correct": false
+            }
+        ]
+    },
+
+    {
+        "question": "How many different flavors of jelly beans exist?",
+        "answerOptions":[
+            {
+                "text":"30",
+                "correct": false
+            },
+            {
+                "text":"40",
+                "correct": false
+            },
+            {
+                "text":"50",
+                "correct": true
+            },
+            {
+                "text":"60",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "Donuts are traditionally sold in boxes containing how many pieces?",
+        "answerOptions":[
+            {
+                "text":"6",
+                "correct": false
+            },
+            {
+                "text":"12",
+                "correct": true
+            },
+            {
+                "text":"13",
+                "correct": false
+            },
+            {
+                "text":"4",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "When was the fast food chain, Mcdonalds founded?",
+        "answerOptions":[
+            {
+                "text":"1955",
+                "correct": true
+            },
+            {
+                "text":"1965",
+                "correct": false
+            },
+            {
+                "text":"1935",
+                "correct": false
+            },
+            {
+                "text":"1945",
+                "correct": false
+            }
+        ]
+    }
+
+]
