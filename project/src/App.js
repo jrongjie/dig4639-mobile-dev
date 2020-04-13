@@ -47,11 +47,13 @@ class App extends React.Component {
         <form onSubmit={this.getValue}>
           <label for="name">Name</label>
           <input type="text" name="name" ref={this.nameRef} />
+
           <label for="number">Number</label>
-          <input type="text" name="name" ref={this.numberRef} />
+          <input type="text" name="number" ref={this.numberRef} />
+
           <button>SUBMIT</button>
         </form>
-        <hr />
+          <hr/>
         <p>{this.state.name}</p>
         <p>{this.state.number}</p>
       </div>
