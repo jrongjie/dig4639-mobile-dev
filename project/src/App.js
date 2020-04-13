@@ -8,8 +8,6 @@ import Contacts from "./components/Contacts"
   //See the current name and contacts length (/profile)
   //All components can be on the same long page but must update dynamically if the list of contacts changes through accessing the adding or removing functionality.
 
-//All communication with the server MUST use window.fetch with a header defined as "API" and use the student's last name.
-
 class App extends React.Component {
 
   constructor(props) {
@@ -28,12 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-       {
-         this.state.contacts.map((value, index) => {
-           return <p key={index}>{value.name}</p>;
-         })
-       }
-       <Contacts/>
+        <Contacts/>
       </div>
     );
   }
