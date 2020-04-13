@@ -1,52 +1,35 @@
 import React from 'react';
-import './App.css';
 
-class Contacts extends React.Component {
+class App extends React.Component {
+
   constructor(props) {
     super(props);
-    this.state = {
-      error:null,
-      isLoaded: false,
-      items: []
-    };
+
+    this.state = {contacts: []};
+
   }
 
   componentDidMount() {
-    fetch('https://mywebsite.com/mydata.json')
-    .then(res => res.json())
-    .then(
-      (result) => {
-        this.setState({
-          isLoaded: true,
-          items: result.items
-        });
-      },
-      (error) => {
-        this.setState({
-          isLoaded: true,
-          error
-        });
-      }
-    )
+
+    window.fetch("http://plato.mrl.ai:8080/contacts", {headers: {API: "gardner"}})
+    .then((res) => res.json())
+    .then((data) => {
+      this.setState({contacts: data.contacts});
+    });
+
   }
+
   render() {
-    const { error, isLoaded, items } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <ul>
-          {items.map(item => (
-            <li key={item.name}>
-              {item.name} {item.price}
-            </li>
-          ))}
-        </ul>
-      );
-    }
+    return (
+      <div>
+       {
+         this.state.contacts.map((value, index) => {
+           return <p key={index}>{value.name}</p>;
+         })
+       }
+      </div>
+    );
   }
 }
 
-export default Contacts;
+export default App;
