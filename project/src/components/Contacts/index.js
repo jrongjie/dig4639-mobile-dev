@@ -22,7 +22,7 @@ class Contacts extends React.Component {
     return(
       <div>
           {this.state.cards.map((card, index) => {
-            return <Card 
+            return <Profile 
                 key={index}
                 title={card.title} 
                 content={card.content}

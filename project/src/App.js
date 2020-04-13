@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import Contacts from "./components/Contacts"
 
 //Create at least one component (React) or screen/component (React Native) for each major action the API provides:
   //See all current contacts (/contacts)
@@ -32,6 +33,7 @@ class App extends React.Component {
            return <p key={index}>{value.name}</p>;
          })
        }
+       <Contacts/>
       </div>
     );
   }
