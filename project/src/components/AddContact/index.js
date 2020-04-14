@@ -12,6 +12,7 @@ class AddContact extends React.Component {
             value2: "",
         }
     }
+
     getValue = () => {
         let name = this.conName.current.value;
         let number = this.conNumber.current.value;
@@ -30,20 +31,22 @@ class AddContact extends React.Component {
         })
         .then(response => response.json())
         .then(() => {
-            this.onSubmit(name, number);
-        })
-        .catch(err => {
-            console.log(err)
-        });
-        this.conName.current.value = "";
-        this.conNumber.current.value = "";
+            this.setState({ value: name})
+            this.setState({ value: number})
+        }
+        , [])
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        this.newVal()
     }
 
     render(){
         return(
             <div>
-                <form onSubmit= {this.getValue}>
-                    <h1>Add Contact</h1>
+                <form className = "card" onSubmit= {this.getValue}>
+                    <h2>Add Contact</h2>
                     <label>Contact Name</label>
                     <input type= "text" id= "name"></input>
                         <br/>

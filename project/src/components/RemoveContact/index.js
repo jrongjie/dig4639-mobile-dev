@@ -18,15 +18,15 @@ class RemoveContact extends React.Component {
       },
       body: JSON.stringify({
         name: this.conName.current.value,
-        number:this.conNumber.current.value
+        number: this.conNumber.current.value
       })
     })
     .then(response => response.json())
     .then(() => {
         this.onClick(this.state.position);
     })
-    .catch(err => {
-      console.log(err);
+    .catch(error => {
+      console.log(error);
     });
   }
 

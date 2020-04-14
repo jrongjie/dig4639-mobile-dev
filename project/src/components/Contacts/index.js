@@ -44,8 +44,8 @@ class Contacts extends React.Component {
         contacts: data.contacts
       })
     })
-    .catch(err => {
-      console.log(err);
+    .catch(error => {
+      console.log(error);
     });
   }
 
