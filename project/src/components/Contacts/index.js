@@ -22,7 +22,7 @@ class Contacts extends React.Component {
 
   render() {
     return (
-      <div> 
+      <div className = "card"> 
        {this.state.contacts.map((value, index) => {
           return <p key={index}>{value.name}, {value.number}</p>;
         })
