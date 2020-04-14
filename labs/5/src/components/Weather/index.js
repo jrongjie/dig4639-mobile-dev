@@ -1,15 +1,15 @@
-import React from 'react'
-import './styles.css'
+import React from "react";
+import "./styles.css";
 
 class WeatherCard extends React.Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      name: '',
+      name: "",
       temperature: 0,
-      temperatureUnit: '',
-      detailedForecast: ''
+      temperatureUnit: "",
+      detailedForecast: ""
     }}
 
   render () {

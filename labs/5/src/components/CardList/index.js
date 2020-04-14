@@ -1,5 +1,5 @@
-import React from 'react'
-import WeatherCard from '../WeatherCard/index.js'
+import React from "react";
+import WeatherCard from "../WeatherCard/index.js";
 
 class CardList extends React.Component {
   
