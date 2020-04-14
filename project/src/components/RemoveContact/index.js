@@ -4,8 +4,10 @@ class RemoveContact extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onClick = props.onClick;
-    this.state = {position: props.position};
+    this.text = React.createRef();
+    this.state = this.state = {
+      value: "",
+    }
   }
   
   deleteContact = () => {
@@ -17,23 +19,34 @@ class RemoveContact extends React.Component {
         "Accept":"application/json"
       },
       body: JSON.stringify({
-        name: this.conName.current.value,
-        number: this.conNumber.current.value
+        position: this.text.current.value,
       })
     })
-    .then(response => response.json())
-    .then(() => {
-        this.onClick(this.state.position);
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    .then((res) => res.json())
+      .then((data) => {
+          this.setState({value: this.text.current.value})
+          console.log(data)
+    }
+    , [])
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.deleteContact()
   }
 
   render() {
     return (
       <div>
-        <button onClick= {this.deleteContact}>Delete Contact</button>          
+        <form onSubmit={this.handleSubmit}>
+          <h2>Remove contact</h2>
+
+          <label htmlFor="name">Position</label><br/>
+          <input type="text" ref={this.textInput} id ="position" />
+          <br/>
+          
+          <button type="submit">Submit</button>
+        </form>        
       </div>
     );
   }

@@ -14,9 +14,6 @@ class AddContact extends React.Component {
     }
 
     getValue = () => {
-        let name = this.conName.current.value;
-        let number = this.conNumber.current.value;
-        
         window.fetch("http://plato.mrl.ai:8080/contacts/add", {
             "method": "POST",
             "headers": {
@@ -25,35 +22,35 @@ class AddContact extends React.Component {
                 "Accept":"application/json"
             },
             body: JSON.stringify({
-                name: this.conName.current.value,
-                number: this.conNumber.current.value
+                name: this.setState({value: this.conName.current.value}),
+                number: this.setState({value: this.conNumber.current.value})
             })
         })
         .then(response => response.json())
         .then(() => {
-            this.setState({ value: name})
-            this.setState({ value: number})
+            this.setState({value: this.conName.current.value})
+            this.setState({value: this.conNumber.current.value})
         }
         , [])
     }
 
     handleSubmit = e => {
         e.preventDefault();
-        this.newVal()
+        this.getValue()
     }
 
     render(){
         return(
             <div>
-                <form className = "card" onSubmit= {this.getValue}>
+                <form className = "card" onSubmit= {this.handleSubmit}>
                     <h2>Add Contact</h2>
                     <label>Contact Name</label>
-                    <input type= "text" id= "name"></input>
+                    <input type="text" ref={this.conName} id ="name"/>
                         <br/>
                     <label>Contact Number</label>
-                    <input type= "number" id= "number"></input>
+                    <input type="text" ref={this.conNumber} id ="number"/>
                         <br/>
-                    <button>Add Contact</button>
+                    <button type= "submit">Add Contact</button>
                 </form>
             </div>
         )
