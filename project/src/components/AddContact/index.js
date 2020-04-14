@@ -1,5 +1,14 @@
 import React from "react";
 
+const HEADERS ={
+    "Method" : "GET",
+    "headers" : {
+      "API" : "gardner",
+      "Content-Type" : "application/json",
+      "Accept": "application/json"
+    }
+}
+
 class AddContact extends React.Component {
     constructor(props) {
         super(props);
@@ -14,18 +23,14 @@ class AddContact extends React.Component {
     }
 
     getValue = () => {
-        window.fetch("http://plato.mrl.ai:8080/contacts/add", {
-            "method": "POST",
-            "headers": {
-                "api": "gardner",
-                "Content-Type": "application/json",
-                "Accept":"application/json"
-            },
+        let newHeaders = {...HEADERS,
+            "method" : "POST",
             body: JSON.stringify({
-                name: this.setState({value: this.conName.current.value}),
-                number: this.setState({value: this.conNumber.current.value})
-            })
-        })
+              name: this.conName.current.value,
+              number:this.conNumber.current.value
+            })}
+
+        fetch("http://plato.mrl.ai:8080/contacts/add", newHeaders)
         .then(response => response.json())
         .then(() => {
             this.setState({value: this.conName.current.value})

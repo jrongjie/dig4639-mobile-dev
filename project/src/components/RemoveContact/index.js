@@ -1,5 +1,14 @@
 import React from "react";
 
+const HEADERS ={
+  "Method" : "GET",
+  "headers" : {
+    "API" : "gardner",
+    "Content-Type" : "application/json",
+    "Accept": "application/json"
+  }
+}
+
 class RemoveContact extends React.Component {
   constructor(props) {
     super(props);
@@ -11,21 +20,17 @@ class RemoveContact extends React.Component {
   }
   
   deleteContact = () => {
-    window.fetch("http://plato.mrl.ai:8080/contacts/remove", {
-      "method": "POST",
-      "headers": {
-        "api": "gardner",
-        "Content-Type": "application/json",
-        "Accept":"application/json"
-      },
+    let newHeaders = {...HEADERS,
+      "method" : "POST",
       body: JSON.stringify({
-        position: this.text.current.value,
-      })
-    })
+        position:this.text.current.value,
+      })}
+
+    fetch("http://plato.mrl.ai:8080/contacts/remove", newHeaders)
     .then((res) => res.json())
-      .then((data) => {
-          this.setState({value: this.text.current.value})
-          console.log(data)
+    .then((data) => {
+      this.setState({value: this.text.current.value})
+      console.log(data)
     }
     , [])
   }

@@ -30,22 +30,14 @@ class Contacts extends React.Component {
   }
 
   componentDidMount() {
-    window.fetch("http://plato.mrl.ai:8080/contacts", {
-      "method": "GET",
-      "headers": {
-        "api": "gardner",
-        "Content-Type": "application/json",
-        "Accept":"application/json"
-      }
-    }) 
-    .then(response => response.json())
-    .then((data) => {
-      this.setState({
-        contacts: data.contacts
-      })
+    fetch("http://plato.mrl.ai:8080/contacts", 
+    {
+      headers: {API: "gardner"}
     })
-    .catch(error => {
-      console.log(error);
+    .then((res) => res.json())
+    .then((data, ) => {
+        console.log(data)
+      this.setState({contacts: data.contacts});
     });
   }
 
