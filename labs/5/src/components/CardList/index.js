@@ -1,43 +1,33 @@
-import React from "react";
-import Weather from "../Weather";
-import data from "../../data.json";
+import React from 'react'
+import WeatherCard from '../WeatherCard/index.js'
 
 class CardList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {cards: data.cards};
+  
+  constructor (props) {
+    super(props)
+    this.state = {
+      periods: []
+    }}
+  componentDidMount() {
+    fetch('https://api.weather.gov/gridpoints/MLB/25,69/forecast')
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({
+          periods: result.properties.periods
+        })
+      })
   }
-
-  remove = (event) => {
-    let datatitle = event.target.getAttribute("datatitle");
-    let localCards = this.state.cards;
-    let changedCards = localCards.filter((card) => {
-      return card.title !== datatitle;
-    });
-
-    this.setState({cards: changedCards});
-  }
-
-  render() {
-    return(
-      <div>
-          {this.state.cards.map((card, index) => {
-            return <Weather 
-                key={index}
-                title={card.title} 
-                content={card.content}/>
-            })
-          }
-      </div>
-    );
-  }
-}
-
-export default CardList;
-
-/*
-<h3>{this.props.name}</h3> 
-<h3>{this.props.temperature}</h3>
-<h3>{this.props.temperatureUnit}</h3>
-<p>{this.props.detailedForcast}</p> 
-*/
+  render () {
+    return (
+      <>
+        {this.state.periods
+          .map((m) => <WeatherCard key={m.number}
+            name={m.name}
+            temperature={m.temperature}
+            temperatureUnit={m.temperatureUnit}
+            detailedForecast={m.detailedForecast}
+          />)}
+      </>
+    )}}
+    
+export default CardList
