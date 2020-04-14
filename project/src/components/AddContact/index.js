@@ -48,7 +48,6 @@ class AddContact extends React.Component {
         return(
             <div>
                 <form className = "card" onSubmit= {this.handleSubmit}>
-                    <h2>Add Contact</h2>
                     <label>Contact Name</label>
                     <input type="text" ref={this.conName} id ="name"/>
                         <br/>

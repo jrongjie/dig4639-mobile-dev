@@ -1,6 +1,5 @@
 //import Elements 
 import React from "react";
-import "./index.css";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -25,11 +24,10 @@ class Profile extends React.Component {
     render(){
         return(
             <div className = "card">
-                <span className = "close" onClick = {this.props.dataclick} datatitle = {this.props.title}>
-                    &times;
-                </span>
-                <h3>{this.props.title}</h3> 
-                <p>{this.props.content}</p>
+                { this.state.profile.map((value, index) => {
+                    return <p key={index}> {value.name}, {value.count}</p> ;
+                })
+                }
             </div>
         );
     }

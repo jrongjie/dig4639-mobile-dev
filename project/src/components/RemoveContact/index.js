@@ -42,9 +42,8 @@ class RemoveContact extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className = "card">
         <form onSubmit={this.handleSubmit}>
-          <h2>Remove contact</h2>
 
           <label htmlFor="name">Position</label><br/>
           <input type="text" ref={this.textInput} id ="position" />
