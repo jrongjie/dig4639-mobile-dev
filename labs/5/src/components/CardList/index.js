@@ -30,4 +30,4 @@ class CardList extends React.Component {
       </>
     )}}
     
-export default CardList
+export default CardList;

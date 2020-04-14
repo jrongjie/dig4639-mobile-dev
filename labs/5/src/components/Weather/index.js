@@ -21,4 +21,4 @@ class WeatherCard extends React.Component {
       </div>
     )}}
 
-export default WeatherCard
+export default WeatherCard;
