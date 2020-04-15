@@ -45,8 +45,8 @@ class RemoveContact extends React.Component {
       <div className = "card">
         <form onSubmit={this.handleSubmit}>
 
-          <label htmlFor="name">Position</label>
-          <input type="text" ref={this.textInput} id ="position" />
+          <label htmlFor="position">Position</label>
+          <input type="text" ref={this.text} id ="position" />
           <br/>
           
           <button type="submit">Submit</button>
